@@ -136,6 +136,18 @@ Aug 07 21:21:02 Deluge systemd[1]: Started Deluge Bittorrent Client Web Interfac
 flemmingss@Deluge:~$
 ```
 
+<h3>Web-interface</h3>
+
+Now it should be ready to use the Web-Interface, run ```sudo reboot``` to reboot the server and verify that it indeed start automatically
+
+
+Use a Web-browser on a client in the same network and navigate to ```http://<ip>:8112/```. Replace ```<ip>``` with your server's IP-address. If you don't know the IP address you can find ut by using the command ```ifconfig```.
+   
+This is how the first view look, log in with the default passord which is ```deluge```.
+
+
+![alt tag](images/deluge_1.png)
+
 
 
 Sources:
