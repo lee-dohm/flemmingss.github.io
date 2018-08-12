@@ -148,11 +148,14 @@ This is how the first view look, log in with the default passord which is ```del
 
 ![alt tag](images/deluge_1.png)
 
+A message will pop up with "We recommend changing the default passord. Do you like to change it now?", click Yes to this. On the next box click on the host and "Connect". In the Preferences window fill in old password (```deluge```) and a new one. Click "Change", "Apply".
+
+![alt tag](images/deluge_2.png)
+
+Just one thing missing now, click "Downloads" to select a download location. Make sure that the user who run Deluge have necessary access to the location selected.
 
 
 Sources:
 * https://www.youtube.com/watch?v=5OFnqLuYZy
 * https://dev.deluge-torrent.org/wiki/UserGuide/Service/systemd
 * https://tektab.com/2015/11/13/setting-up-deluge-with-webui-deluge-web-on-a-raspberry-pi/3/
-
-***Not complete yet***
