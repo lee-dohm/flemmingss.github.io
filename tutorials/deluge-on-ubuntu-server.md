@@ -1,5 +1,6 @@
 <h1>Installation of Deluge on Ubuntu Server</h1>
 
+This is an easy step-by-step tutorial on how to install and set up Deluge BitTorrent client on a server running Ubuntu Server.
 
 <h3>Install</h3>
 
@@ -137,7 +138,8 @@ flemmingss@Deluge:~$
 
 
 Sources:
-[](https://www.youtube.com/watch?v=5OFnqLuYZy)
-[](https://dev.deluge-torrent.org/wiki/UserGuide/Service/systemd)
-[](https://tektab.com/2015/11/13/setting-up-deluge-with-webui-deluge-web-on-a-raspberry-pi/3/)
+* https://www.youtube.com/watch?v=5OFnqLuYZy
+* https://dev.deluge-torrent.org/wiki/UserGuide/Service/systemd
+* https://tektab.com/2015/11/13/setting-up-deluge-with-webui-deluge-web-on-a-raspberry-pi/3/
+
 ***Not complete yet***
