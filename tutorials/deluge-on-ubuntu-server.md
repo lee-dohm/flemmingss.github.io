@@ -1,6 +1,7 @@
 <h1>Installation of Deluge on Ubuntu Server</h1>
 
 This is an easy step-by-step tutorial on how to install and set up Deluge BitTorrent client on a server running Ubuntu Server.
+These steps will lead you to a complete installation of Deluge with the necessary configuration that automatically starts during boot.
 
 <h3>Install</h3>
 
