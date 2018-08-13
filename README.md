@@ -1,5 +1,11 @@
 # flemmingss.github.io
 
-[Link til fil i samme repo](test.md)
+
 
 [Link til annen repo](flemmingss/repo/blob/Copy-ADComputerGroupMembership)
+
+
+
+
+## tutorials
+[Installation of Deluge on Ubuntu Server](/tutorials/deluge-on-ubuntu-server.md)
