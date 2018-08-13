@@ -1,9 +1,9 @@
-<h1>Installation of Deluge on Ubuntu Server</h1>
+# Installation of Deluge on Ubuntu Server
 
 This is an easy step-by-step tutorial on how to install and set up Deluge BitTorrent client on a server running Ubuntu Server.
 These steps will lead you to a complete installation of Deluge with the necessary configuration that automatically starts during boot.
 
-<h3>Install</h3>
+## Installation
 
 First add the Deluge personal package archive by running ``` sudo add-apt-repository ppa:deluge-team/ppa ```.
 
@@ -27,7 +27,7 @@ flemmingss@Deluge:~$ which deluge deluge-web deluged
 /usr/bin/deluged
 ```
 
-<h3>Create Service: deluged.servic</h3>
+## Create Service: deluged.servic
 
 Run ```sudo nano /etc/systemd/system/deluged.service``` to create the Deluged Service file and open Nano text editor.
 Paste the folowing inside the file:
@@ -80,7 +80,7 @@ Aug 07 21:14:17 Deluge systemd[1]: Started Deluge Bittorrent Client Daemon.
 flemmingss@Deluge:~$
 ```
 
-<h3>Create Service: deluge-web.service</h3>
+## Create Service: deluge-web.service
 
 Next step is to make a Service file for Deluge-Web, run ```sudo nano /etc/systemd/system/deluge-web.service```.
 
@@ -136,7 +136,7 @@ Aug 07 21:21:02 Deluge systemd[1]: Started Deluge Bittorrent Client Web Interfac
 flemmingss@Deluge:~$
 ```
 
-<h3>Web-interface</h3>
+## Web-interface
 
 Now it should be ready to use the Web-Interface, run ```sudo reboot``` to reboot the server and verify that it indeed start automatically
 
