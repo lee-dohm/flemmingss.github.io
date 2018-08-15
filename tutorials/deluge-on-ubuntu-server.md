@@ -5,22 +5,22 @@ These steps will lead you to a complete installation of Deluge with the necessar
 
 ## Installation
 
-First add the Deluge personal package archive by running ``` sudo add-apt-repository ppa:deluge-team/ppa ```.
+First add the Deluge personal package archive by running `sudo add-apt-repository ppa:deluge-team/ppa`.
 
-Then run ```sudo apt-get update``` to get the update from the above PPA.
+Then run `sudo apt-get update` to get the update from the above PPA.
 
 Now you can install Deluge, Deluge Web-interface and Deluged by running these three commands:
 
-```sudo apt-get install deluge```
+```
+sudo apt-get install deluge
+sudo apt install deluge-web -y
+sudo apt install deluged
+```
 
-```sudo apt install deluge-web -y```
 
-```sudo apt install deluged```
+Now you can verify installation by running `which deluge deluge-web deluged`, the output should look like this:
 
-
-Now you can verify installation by running ```which deluge deluge-web deluged```, the output should look like this:
-
-```Shell Session
+```shell
 flemmingss@Deluge:~$ which deluge deluge-web deluged
 /usr/bin/deluge
 /usr/bin/deluge-web
@@ -29,8 +29,9 @@ flemmingss@Deluge:~$ which deluge deluge-web deluged
 
 ## Create Service: deluged.servic
 
-Run ```sudo nano /etc/systemd/system/deluged.service``` to create the Deluged Service file and open Nano text editor.
+Run `sudo nano /etc/systemd/system/deluged.service` to create the Deluged Service file and open Nano text editor.
 Paste the folowing inside the file:
+
 ```
 [Unit]
 Description=Deluge Bittorrent Client Daemon
@@ -48,19 +49,20 @@ TimeoutStopSec=300
 [Install]
 WantedBy=multi-user.target
 ```
-Replace flemmingss in ```User=flemmingss``` with your username, and flemmingss in ```Group=flemmingss``` with your users group (normaly the same as the username).
+
+Replace flemmingss in `User=flemmingss` with your username, and flemmingss in `Group=flemmingss` with your users group (normaly the same as the username).
 Use the arrow-keys to maneuver in the file. Use CTRL+O to save the file and CTRL+X to exit the editor. 
 
 Now run the following three commands:
 
-```sudo systemctl enable /etc/systemd/system/deluged.service```
-
-```sudo systemctl start deluged ```
-
-```sudo systemctl status deluged ```
+```shell
+sudo systemctl enable /etc/systemd/system/deluged.service
+sudo systemctl start deluged 
+sudo systemctl status deluged
+```
 
 The output should look similar to this:
-```Shell Session
+```shell
 flemmingss@Deluge:~$ sudo systemctl enable /etc/systemd/system/deluged.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/deluged.service to /etc/systemd/system/deluged.service.
 flemmingss@Deluge:~$ sudo systemctl start deluged
@@ -82,9 +84,10 @@ flemmingss@Deluge:~$
 
 ## Create Service: deluge-web.service
 
-Next step is to make a Service file for Deluge-Web, run ```sudo nano /etc/systemd/system/deluge-web.service```.
+Next step is to make a Service file for Deluge-Web, run `sudo nano /etc/systemd/system/deluge-web.service`.
 
 Paste the folowing inside the file:
+
 ```
 [Unit]
 Description=Deluge Bittorrent Client Web Interface
@@ -104,17 +107,19 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
-Replace flemmingss in ```User=flemmingss``` with your username, and flemmingss in ```Group=flemmingss``` with your users group.
+
+Replace flemmingss in `User=flemmingss` with your username, and flemmingss in `Group=flemmingss` with your users group.
 Save the file and run the following three commands:
 
-```sudo systemctl enable /etc/systemd/system/deluge-web.service```
-
-```sudo systemctl start deluge-web```
-
-```udo systemctl status deluge-web```
+```shell
+sudo systemctl enable /etc/systemd/system/deluge-web.service
+sudo systemctl start deluge-web
+udo systemctl status deluge-web
+```
 
 The output should look similar to this:
-```Shell Session
+
+```shell
 flemmingss@Deluge:~$ sudo systemctl enable /etc/systemd/system/deluge-web.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/deluge-web.service to /etc/systemd/system/deluge-web.service.
 flemmingss@Deluge:~$ sudo systemctl start deluge-web
@@ -138,17 +143,17 @@ flemmingss@Deluge:~$
 
 ## Web-interface
 
-Now it should be ready to use the Web-Interface, run ```sudo reboot``` to reboot the server and verify that it indeed start automatically
+Now it should be ready to use the Web-Interface, run `sudo reboot` to reboot the server and verify that it indeed start automatically
 
 
-Use a Web-browser on a client in the same network and navigate to ```http://<ip>:8112/```. Replace ```<ip>``` with your server's IP-address. If you don't know the IP address you can find ut by using the command ```ifconfig```.
+Use a Web-browser on a client in the same network and navigate to `http://<ip>:8112/`. Replace `<ip>` with your server's IP-address. If you don't know the IP address you can find ut by using the command `ifconfig`.
    
-This is how the first view look, log in with the default passord which is ```deluge```.
+This is how the first view look, log in with the default passord which is `deluge`.
 
 
 ![alt tag](images/deluge_1.png)
 
-A message will pop up with "We recommend changing the default passord. Do you like to change it now?", click Yes to this. On the next box click on the host and "Connect". In the Preferences window fill in old password (```deluge```) and a new one. Click "Change", "Apply".
+A message will pop up with "We recommend changing the default passord. Do you like to change it now?", click Yes to this. On the next box click on the host and "Connect". In the Preferences window fill in old password (`deluge`) and a new one. Click "Change", "Apply".
 
 ![alt tag](images/deluge_2.png)
 
